@@ -1,5 +1,7 @@
 # YawDB
 
+[![Build Status](https://github.com/lydongcanh/yawdb/actions/workflows/ci.yml/badge.svg)](https://github.com/lydongcanh/yawdb/actions/workflows/ci.yml)
+
 **YawDB** (Yet Another Weird Database) is a simple SQL database implementation written in Rust. It is designed for educational purposes to help you understand the internals of SQL databases.
 
 ## Features
