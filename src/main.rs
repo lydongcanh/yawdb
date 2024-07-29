@@ -1,11 +1,19 @@
 use yawdb::storage::Storage;
+use yawdb::parser::parse_sql;
+use yawdb::executor::Executor;
 
 fn main() {
     env_logger::init();
-    let mut storage = Storage::new("test.db");
-    
-    // Example usage
-    storage.write(0, b"hello");
-    let data = storage.read(0, 5);
-    println!("Read data: {:?}", String::from_utf8(data).unwrap());
+    let storage = Storage::new("test.db");
+    let mut executor = Executor::new(storage);
+
+    let sql = "SELECT * FROM test;";
+    match parse_sql(sql) {
+        Ok(statements) => {
+            for statement in statements {
+                executor.execute(statement);
+            }
+        }
+        Err(e) => println!("Error parsing SQL: {:?}", e),
+    }
 }
