@@ -1,1 +1,46 @@
-/target
+# Rust-related
+target/
+**/*.rs.bk
+**/*.rs.swp
+**/*.rs.swo
+Cargo.lock
+*.log
+
+# Cargo Binaries
+/target/
+/Cargo.lock
+
+# Backup files
+*.bak
+*.swp
+*.swo
+*.old
+
+# Editors and IDEs
+.idea/
+/.vscode/
+/*.code-workspace
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Logs
+*.log
+
+# macOS
+*.DS_Store
+
+# Windows
+Thumbs.db
+*.bak
+*.old
+*.orig
+*.tmp
+*.temp
+*.swp
+*.swo
