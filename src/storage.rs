@@ -28,4 +28,9 @@ impl Storage {
         self.file.read_exact(&mut buffer).expect("Unable to read data");
         buffer
     }
+    
+    pub fn append(&mut self, data: &[u8]) {
+        self.file.seek(SeekFrom::End(0)).expect("Unable to seek");
+        self.file.write_all(data).expect("Unable to write data");
+    }
 }
